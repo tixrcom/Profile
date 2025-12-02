@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            font-family: 'Arial', sans-serif;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height:100%;
+            margin: 0;
+            overflow: hidden;
+            transition: 1s;
+            background:#565654;
+        }
+
+        .contain{
+            justify-content: space-between;
+            position: relative;
+            top:50px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px -30px 0 20px ;
+        }
+        .close {
+                position: relative;
+                top: 40px;
+                text-align: center;
+                left: 290px;
+                font-size: 30px;
+                cursor: pointer;
+                z-index: 20;
+                width: 60px;
+                height: 10px;
+                border-radius: 20%;
+                text-decoration: none;
+                color: white;
+                background-color: rgba(220, 216, 216, 0.7);
+        }
+        .contain-2{
+           right: 4px;
+        }
+        .page{
+            
+            position: relative;
+            align-self: center;
+            top: -40px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            width: 276px;
+            height: 500px;
+            margin: 0 0 0 10px;
+            
+        }
+        .img{
+            margin: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            width: 276px;
+            height: 160px;
+        }
+        .page h4,p{
+            margin: 20px 20px 0;
+        }
+        .page p{
+            margin: 12px 20px -2px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            font-weight: 200;
+        }
+        .page h4{
+            
+            margin: 14px 20px -10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            position: relative;
+            top: -10px;
+            font-weight: 800;
+        }
+        .bottom-box{
+            width: auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background:#111111 ;
+            top: -70px;
+            border-radius: 4px;
+            padding: 8px 10px;
+        }
+        .bottom-box img{
+            margin: 2px 0 0 2px;
+            width: 35px;
+            height:25px;
+        }
+        .bottom-box h5,span{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 1px 10px;
+            font-size: 11px;
+            color: white;
+        }
+        .bottom-box .words{
+            margin: 0 ;
+            display: flex;
+            flex-direction: column;
+        }
+        .logo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            left: 20px;
+            position: absolute;
+            top: 5px;
+        }
+        .splash{
+            width: 180px;
+        }
+      @font-face {
+        font-family: myfont;
+        src:url(FNT.ttf);
+      }
+     .month{
+        color: #dbd8d8;
+        margin: 2px 0 5PX 0;
+        font-family: myfont;
+
+    }
+    .logo .date{
+        margin: 10px;
+        font-family: myfont;
+        color: #dbd8d8;
+    }
+    .button{
+    position:relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0 10px 0 0;
+    right: 0;
+    width:  300px;
+    height: 500px;
+    transition: .7s;
+    background-color: transparent;
+    border-radius: 20px;
+    
+    }
+.slide_div,.button{
+    color: #010101;
+    text-decoration: none;
+}
+.button:hover{
+    background-color: transparent;
+
+}
+.empty{
+            position: relative;
+            background:transparent ;
+            margin-top: 46px;
+        }
+
+    .container{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    left: 0;
+    display: flex;
+    justify-content:center;
+    flex-direction: row;
+    align-items:center;
+    overflow: hidden;
+    }
+ .imgcontainer{
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    left:6px;
+    top: -10px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    transition: 1s;
+}
+#slider2:target ~ .imgcontainer #img1
+#slider1:target ~ .imgcontainer #button1{
+   width: 276pxx;
+   height: 100px;
+    background-color: transparent;
+}
+#slider2:target ~ .imgcontainer #img2
+#slider2:target ~ .imgcontainer #button2{
+   width: 276px;
+   height: 200px;
+   
+    background-color: transparent;
+    filter: saturate(100%);
+}
+#slider3:target ~ .imgcontainer #img3
+#slider3:target ~ .imgcontainer #button3{
+   width: -6px;
+   height: 200px;
+   
+    background-color: transparent;
+    filter: saturate(100%);
+   
+}
+#slider1:target ~ .imgcontainer{
+    left:0;
+    position: absolute;
+}
+#slider2:target ~ .imgcontainer{
+    position: absolute;
+    left: -270px;
+}
+#slider3:target ~ .imgcontainer{
+    position: absolute;
+    left: -540px;
+}
+.radi{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 96%;
+    width: 20px;
+    left: 30%;
+    position: absolute;
+    align-items: center;
+    z-index: 99;
+    
+}
+.radi,button{
+    background-color: transparent;
+    width: 140px;
+    height: 5px;
+    border: 0;
+    border-radius: 1px;
+}
+#dash1{
+    margin-right: 10px;
+    background-color: white;
+}
+#dash2,#dash3{
+    margin-right: 10px;
+    background-color: grey;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+    <div class="header">
+
+       <div class="left"> </div>
+       <div class="right"></div>
+
+    </div>
+
+			<a href="tickets.html" class="close">&times;</a>
+
+    <div class="container">
+
+        <span class="slider" id="slider1"></span>
+        <span class="slider" id="slider2"></span>
+        <!-- <span class="slider" id="slider3"></span> -->
+			
+    <div class="imgcontainer">
+		
+
+		
+        <div class="contain" id="img" onclick="document.getElementById('dash1').style.backgroundColor='white'">
+            
+            <a href="#slider1" class="button" id="button1"  onclick="document.getElementById('dash2').style.backgroundColor='grey'" >
+            <div class="page slide-1">
+                <div class="logo">
+                    <imgg src="splash2.pngg" class="splash"/>
+                    <h2 class="month"> </h2> 
+                    <h4 class="date"> </h4>    
+                </div>
+                <img src="Tview.jpeg" class="img"></img>
+                <p>TRAVEL</p>
+                <h4>Moon Palace | Nizuc | Deluxe | Oceanfront | 2 Doubles | 5-Night (Thu Check-In) | 4 Person</h4>
+                <p>Event</p>
+                <h4>Crash My Playa 2026</h4>
+                <p>Costomer</p>
+                <h4>Esther Bigley</h4>
+                <p>Order ID</p>
+                <h4>S1B5U24P8C</h4>
+                <p>Serial ID</p>
+                <h4>8806A</h4>
+            </div>
+        </a>
+            <div class="empty">
+            </div>
+       
+        </div>
+
+        <div class="contain contain-2" id="img2"onclick="document.getElementById('dash2').style.backgroundColor='white'">
+            
+                
+                <a href="#slider2" class="button" id="button2"onclick="document.getElementById('dash1').style.backgroundColor='grey'; document.getElementById('dash3').style.backgroundColor='grey'">
+            
+                <div class="page slide-1" >
+                    <!-- <div class="logo">
+                        <img src="splash2.png" class="splash"/>
+                        <h2 class="month">AUGUST WEEKEND 1</h2> 
+                        <h4 class="date">AUGUST 8th - 10th</h4>    
+                    </div> -->
+                    <img src="Tview.jpeg" class="img"></img>
+                    <p>MISCELLANEOUS</p>
+                    <h4>Unisex Hoodie [Medium]</h4>
+                    <p>Event</p>
+                    <h4>Crash My Playa 2026</h4>
+                    <p>Costomer</p>
+                    <h4>Esther Bigley</h4>
+                    <p>Order ID</p>
+                    <h4>S1A6U54P3C</h4>
+                    <p>Serial ID</p>
+                    <h4>6703A</h4>
+                </div>
+            </a>
+                <div class="bottom-box">
+                    <div><img src="1.png" alt=""></div>
+                    <div class="words">
+                        <span>Add to</span>
+                        <h5>Apple Wallet</h5>
+                    </div>
+    
+                </div>
+            
+            </div>
+
+            <!-- <div class="contain contain-3" id="img3"onclick="document.getElementById('dash3').style.backgroundColor='white'">
+            
+                    <a href="#slider3" class="button" id="button3"onclick="document.getElementById('dash2').style.backgroundColor='grey'">
+            
+                    <div class="page slide-1">
+                       
+                        <img src="Tview.png" class="img"></img>
+                        <p>MISCELLANEOUS</p>
+                        <h4>Weekend 1 Hotel Package Combo VIP Upgrade</h4>
+                        <p>Event</p>
+                        <h4>Splash House 2025</h4>
+                        <p>Costomer</p>
+                        <h4>Jeanine Wallner</h4>
+                        <p>Order ID</p>
+                        <h4>S1V3U51D3C</h4>
+                        <p>Serial ID</p>
+                        <h4>6703A</h4>
+                    </div>
+                </a>
+            
+                    <div class="bottom-box">
+                        <div><img src="1.png" alt=""></div>
+                        <div class="words">
+                            <span>Add to</span>
+                            <h5>Apple Wallet</h5>
+                        </div>
+        
+                    </div>
+                
+                    
+                
+                </div>
+            </div> -->
+
+    </div>
+    <div class="radi">
+        <button type="radio" class="dsh1" id="dash1"></button>
+        <button type="radio" class="dsh2" id="dash2"></button>
+        <!-- <button type="radio" class="dsh3" id="dash3"></button> -->
+    </div>
+
+</body>
+</html>
